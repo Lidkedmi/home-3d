@@ -396,6 +396,7 @@ bed(606, 517, 0, -1, 1.6, 2.0, { frame: mat.boucleDark, head: mat.greige, duvet:
 nightstand(551, 478, 0, -1); nightstand(661, 478, 0, -1);
 // wardrobe wall on the south wall: 3 parts of 100 cm (right = bathroom side, middle = vanity niche, left = window side), 60 cm deep, up to the ceiling
 for (const x of [518.5, 622.5]) { wardrobe(x, 630.8, 52, 31.2, 'N'); up(B(x, 630.8, 52, 31.2, CEIL - 2.4, mat.offwhite, 2.4)); up(B(x + 25.6, 630.3, .8, .8, CEIL, mat.capIn)); }   // two 50 cm doors each, full height
+for (const x of [570.5, 622.5]) { B(x - .5, 630.2, 1, 1, WALL_H, mat.capIn); up(B(x - .5, 630.2, 1, 1, CEIL - WALL_H, mat.capIn, WALL_H)); }   // visible division between the three 1 m parts
 { const m = mat.offwhite, x0 = 570.5, w = 52;   // middle part: 2 doors below the shelf, open niche 95-135 cm (no mirror), 2 doors above up to the ceiling
   B(x0, 630.8, w, 31.2, .95, m); B(x0 + w / 2 - .3, 630.5, .6, .6, .94, mat.capIn); for (const x of [x0 + w / 2 - 3.6, x0 + w / 2 + 2.8]) B(x, 630, .8, .8, .22, mat.brass, .58);   // storage below the shelf
   B(x0, 630.4, w, 31.6, .035, mat.oak, .95);                                                                                       // shelf at 95 cm
