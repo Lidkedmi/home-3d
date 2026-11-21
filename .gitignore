@@ -1,0 +1,5 @@
+# Only the 3D viewer is published - everything else stays local
+*
+!.gitignore
+!index.html
+!apartment3d.html
