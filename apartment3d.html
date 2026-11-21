@@ -396,13 +396,13 @@ bed(606, 517, 0, -1, 1.6, 2.0, { frame: mat.boucleDark, head: mat.greige, duvet:
 nightstand(551, 478, 0, -1); nightstand(661, 478, 0, -1);
 // wardrobe wall on the south wall: 3 parts of 100 cm (right = bathroom side, middle = vanity niche, left = window side), 60 cm deep, up to the ceiling
 for (const x of [518.5, 622.5]) { wardrobe(x, 630.8, 52, 31.2, 'N'); up(B(x, 630.8, 52, 31.2, CEIL - 2.4, mat.offwhite, 2.4)); up(B(x + 25.7, 630.5, .6, .6, CEIL - WALL_H, mat.capIn, WALL_H)); }   // two 50 cm doors each, full height
-{ const m = mat.offwhite, x0 = 570.5, w = 52;
+{ const m = mat.offwhite, x0 = 570.5, w = 52;   // middle part: 2 doors below the shelf, open niche 95-135 cm (no mirror), 2 doors above up to the ceiling
   B(x0, 630.8, w, 31.2, .95, m); B(x0 + w / 2 - .3, 630.5, .6, .6, .94, mat.capIn); for (const x of [x0 + w / 2 - 3.6, x0 + w / 2 + 2.8]) B(x, 630, .8, .8, .22, mat.brass, .58);   // storage below the shelf
   B(x0, 630.4, w, 31.6, .035, mat.oak, .95);                                                                                       // shelf at 95 cm
-  B(x0, 660, w, 2, WALL_H - .985, mat.oak, .985); up(B(x0, 660, w, 2, 1.85 - WALL_H, mat.oak, WALL_H));
-  B(x0 + 6, 659.3, w - 12, .7, WALL_H - 1.08, mat.mirror, 1.08); up(B(x0 + 6, 659.3, w - 12, .7, 1.75 - WALL_H, mat.mirror, WALL_H));       // mirror
-  up(B(x0, 630.8, w, 31.2, CEIL - 1.85, m, 1.85)); up(B(x0 + w / 2 - .3, 630.5, .6, .6, CEIL - 1.85, mat.capIn, 1.85)); solids.push([x0, 632, w, 30]);         // storage above the mirror
-  { const g = G(x0 + w - 8, 650); vase(g, 0, 0, .985, mat.pot, .5); lc(g, -.36, .02, .035, .1, .985, mat.brass); lc(g, -.27, -.05, .028, .07, .985, mat.terracotta); }
+  B(x0, 660, w, 2, WALL_H - .985, mat.oak, .985); up(B(x0, 660, w, 2, 1.35 - WALL_H, mat.oak, WALL_H));                              // niche back panel
+  up(B(x0, 630.8, w, 31.2, CEIL - 1.35, m, 1.35)); up(B(x0 + w / 2 - .3, 630.5, .6, .6, CEIL - 1.35, mat.capIn, 1.35)); solids.push([x0, 632, w, 30]);         // storage above the niche
+  for (const x of [x0 + w / 2 - 3.6, x0 + w / 2 + 2.8]) up(B(x, 630, .8, .8, .22, mat.brass, 1.42));
+  { const g = G(x0 + w - 8, 650); lc(g, -.36, .02, .035, .1, .985, mat.brass); lc(g, -.27, -.05, .028, .07, .985, mat.terracotta); }
 }
 curtain(673, 499, 16, false); curtain(673, 555, 16, false);
 
